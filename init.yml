@@ -9,12 +9,23 @@
         - ack-grep
         - apg
         - aptitude
+
+        # XMPP stuff
+        - bitlbee
+        - bitlbee-plugin-otr
+
         - build-essential
         - curl
         - git
         - graphviz
         - htop
         - iotop
+
+        # IRC stuff
+        - irssi
+        - irssi-plugin-otr
+        - irssi-scripts
+
         - libreadline-dev
         - libssl-dev
         - nodejs
