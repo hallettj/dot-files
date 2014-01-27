@@ -1,6 +1,8 @@
 #!/usr/bin/env ansible-playbook
 ---
-- hosts: workstations
+- name: bootstraps workstation environment
+  hosts: localhost
+  connection: local
   tasks:
     - name: install apt packages
       action: apt pkg={{ item }} state=present
@@ -29,6 +31,7 @@
         - libreadline-dev
         - libssl-dev
         - nodejs
+        - npm
 
         # Dependencies for apt_repository
         - python-apt
@@ -44,8 +47,4 @@
     - apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main'
       sudo: yes
     - apt: pkg=google-chrome-beta
-      sudo: yes
-
-    - name: link ack-grep to ack
-      file: file src=/usr/bin/ack-grep dest=/usr/bin/ack state=link owner=root
       sudo: yes
