@@ -1,0 +1,24 @@
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = auto
+[user]
+    name = Jesse Hallett
+    email = jesse@sitr.us
+[alias]
+    st  = status
+    up  = !git stash && git fetch && git rebase origin/master && git stash pop
+    di  = diff --cached
+    fix = !vim $(git-ls-files --unmerged | cut -f2 | uniq)
+    pend = log origin/master..HEAD
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[url "git@github.com"]
+    insteadOf = gh
+[core]
+    pager = less -FR
+    excludesfiles = .*.swo .*.swp
+[format]
+    #pretty = tformat:"%Cblue%h...%Creset %Cgreen%an:%Creset %s (%ar)"
+[push]
+    default = matching

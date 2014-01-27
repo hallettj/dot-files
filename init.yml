@@ -1,0 +1,40 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: workstations
+  tasks:
+    - name: install apt packages
+      action: apt pkg={{ item }} state=present
+      sudo: yes
+      with_items:
+        - ack-grep
+        - apg
+        - aptitude
+        - build-essential
+        - curl
+        - git
+        - graphviz
+        - htop
+        - iotop
+        - libreadline-dev
+        - libssl-dev
+        - nodejs
+
+        # Dependencies for apt_repository
+        - python-apt
+        - python-pycurl
+
+        - tmux
+        - wget
+        - xclip
+
+    # Install Google Chrome
+    - apt_key: id=7FAC5991
+               url=https://dl-ssl.google.com/linux/linux_signing_key.pub
+    - apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main'
+      sudo: yes
+    - apt: pkg=google-chrome-beta
+      sudo: yes
+
+    - name: link ack-grep to ack
+      file: file src=/usr/bin/ack-grep dest=/usr/bin/ack state=link owner=root
+      sudo: yes
