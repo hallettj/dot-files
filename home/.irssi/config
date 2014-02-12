@@ -335,7 +335,6 @@ settings = {
     pushover_ignorechannels = "&bitlbee";
 
     autoaway_message = "I'm not at my keyboard right now.";
-    autoaway_timeout = "600";
   };
 };
 hilights = (
