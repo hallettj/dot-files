@@ -29,6 +29,7 @@ servers = (
     chatnet = "freenode";
     port = "6697";
     use_ssl = "yes";
+    autoconnect = "yes";
   },
   {
     address = "zinc.sitr.us";
@@ -36,12 +37,7 @@ servers = (
     port = "6697";
     use_ssl = "yes";
   },
-  {
-    address = "localhost";
-    chatnet = "BitlBee";
-    port = "6667";
-    autoconnect = "yes";
-  }
+  { address = "localhost"; chatnet = "BitlBee"; port = "6667"; }
 );
 
 chatnets = {
