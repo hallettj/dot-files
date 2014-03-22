@@ -345,4 +345,26 @@ hilights = (
   { text = "Hallett"; color = "%M"; nick = "no"; word = "yes"; }
 );
 logs = { };
-keyboard = ( );
+keyboard = (
+  # Alternative shortcuts for changing windows that work well with
+  # inverted number row.
+  { key = "meta-!"; id = "change_window"; data = "1"; },
+  { key = "meta-@"; id = "change_window"; data = "2"; },
+  { key = "meta-#"; id = "change_window"; data = "3"; },
+  { key = "meta-$"; id = "change_window"; data = "4"; },
+  { key = "meta-%"; id = "change_window"; data = "5"; },
+  { key = "meta-^"; id = "change_window"; data = "6"; },
+  { key = "meta-&"; id = "change_window"; data = "7"; },
+  { key = "meta-*"; id = "change_window"; data = "8"; },
+  { key = "meta-("; id = "change_window"; data = "9"; },
+
+  { key = "meta-1"; id = "change_window"; data = "1"; },
+  { key = "meta-2"; id = "change_window"; data = "2"; },
+  { key = "meta-3"; id = "change_window"; data = "3"; },
+  { key = "meta-4"; id = "change_window"; data = "4"; },
+  { key = "meta-5"; id = "change_window"; data = "5"; },
+  { key = "meta-6"; id = "change_window"; data = "6"; },
+  { key = "meta-7"; id = "change_window"; data = "7"; },
+  { key = "meta-8"; id = "change_window"; data = "8"; },
+  { key = "meta-9"; id = "change_window"; data = "9"; }
+);
