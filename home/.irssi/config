@@ -358,6 +358,9 @@ keyboard = (
   { key = "meta-*"; id = "change_window"; data = "8"; },
   { key = "meta-("; id = "change_window"; data = "9"; },
 
+  # I rebind the default window-changing shortcuts second so that the
+  # titles in my window list continue to be labeled with numbers.
+  # Without this part my windows are labeled with symbols instead.
   { key = "meta-1"; id = "change_window"; data = "1"; },
   { key = "meta-2"; id = "change_window"; data = "2"; },
   { key = "meta-3"; id = "change_window"; data = "3"; },
