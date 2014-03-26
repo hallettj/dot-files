@@ -27,3 +27,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export ANSIBLE_ASK_SUDO_PASS=True
+
+# That's right
+export EDITOR=vim
+# And again
+export VISUAL=$EDITOR
