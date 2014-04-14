@@ -32,3 +32,14 @@ export ANSIBLE_ASK_SUDO_PASS=True
 export EDITOR=vim
 # And again
 export VISUAL=$EDITOR
+
+# Run all scripts in ~/.config/profile.d"
+PROFILES_DIR="$HOME/.config/profile.d"
+if [ -d "$PROFILES_DIR" ]; then
+  PROFILES=$(run-parts --list $PROFILES_DIR)
+  if [ -n "$PROFILES" ]; then
+    for PROFILE in $PROFILES; do
+      source $PROFILE
+    done
+  fi
+fi
