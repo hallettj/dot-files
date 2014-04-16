@@ -1,0 +1,9 @@
+set complete = 1
+set hintchars = uhetidonas
+
+highlight Hint color: black; font-weight: bold; font-family: sans-serif; font-size: 10px; text-shadow: rgba(255, 255, 255, 0.6) 0px 1px 0px; background: linear-gradient(rgb(255, 247, 133), rgb(255, 197, 66)); border: 1px solid rgb(227, 190, 35); border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 3px 7px 0px; padding: 1px 3px 0px; text-transform: uppercase;
+highlight HintElem color: black; background-color: rgb(255, 247, 133);
+highlight HintActive color: black; background-color: rgb(209, 231, 81);
+
+noremap j 3j
+noremap k 3k
