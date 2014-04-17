@@ -7,3 +7,6 @@ highlight HintActive color: black; background-color: rgb(209, 231, 81);
 
 noremap j 3j
 noremap k 3k
+
+ignorekeys add gabrielecirulli.github.io/2048/
+ignorekeys add feedly.com/*
