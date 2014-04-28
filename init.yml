@@ -21,8 +21,13 @@
 
         # IRC stuff
         - irssi
-        - irssi-plugin-otr
         - irssi-scripts
+
+        # SASL auth for irssi
+        - libcrypt-blowfish-perl
+        - libcrypt-dh-perl
+        - libcrypt-openssl-bignum-perl
+        - libmath-bigint-perl
 
         - libreadline-dev
         - libssl-dev
