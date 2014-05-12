@@ -9,3 +9,4 @@ noremap k 3k
 
 ignorekeys add gabrielecirulli.github.io/2048/
 ignorekeys add feedly.com/*
+ignorekeys add sitr.us/talks/*
