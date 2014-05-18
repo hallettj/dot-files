@@ -1,0 +1,27 @@
+# ~/.tmuxinator/comms.yml
+
+name: comms
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Run arbitrary `pass` command to make sure passphrase is cached.
+pre: pass grep 'does not match anything'
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - mail/galois:   mutt -F ~/.mutt/logins/galois
+  - mail/sitrus:   mutt -F ~/.mutt/logins/sitrus
+  - jabber/galois: jabber jesse@galois.com
+  - jabber/sitrus: jabber jesse@sitr.us
+  - irc:           irssi
+  - jabber/gmail:  jabber hallettj@gmail.com

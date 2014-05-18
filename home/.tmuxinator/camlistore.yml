@@ -1,0 +1,18 @@
+name: camlistore
+root: ~/projects/go/camlistore
+
+windows:
+  - procs:
+      layout: main-vertical
+      panes:
+        - tunnel:
+          - autossh -L 3179:localhost:3179 hallettj.dyndns.org
+        - metastore:
+          - sleep 1
+          - bin/cammount ~/camlistore
+        - documents:
+          - sleep 1
+          - bin/cammount ~/Documents Documents
+        - pictures:
+          - sleep 1
+          - bin/cammount ~/Pictures Pictures
