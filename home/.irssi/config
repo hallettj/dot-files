@@ -349,18 +349,6 @@ keyboard = (
   { key = "^P"; id = "command"; data = "scrollback goto -25"; },
   { key = "^N"; id = "command"; data = "scrollback goto +25"; },
 
-  # Alternative shortcuts for changing windows that work well with
-  # inverted number row.
-  { key = "meta-!"; id = "change_window"; data = "1"; },
-  { key = "meta-@"; id = "change_window"; data = "2"; },
-  { key = "meta-#"; id = "change_window"; data = "3"; },
-  { key = "meta-$"; id = "change_window"; data = "4"; },
-  { key = "meta-%"; id = "change_window"; data = "5"; },
-  { key = "meta-^"; id = "change_window"; data = "6"; },
-  { key = "meta-&"; id = "change_window"; data = "7"; },
-  { key = "meta-*"; id = "change_window"; data = "8"; },
-  { key = "meta-("; id = "change_window"; data = "9"; },
-
   # I rebind the default window-changing shortcuts second so that the
   # titles in my window list continue to be labeled with numbers.
   # Without this part my windows are labeled with symbols instead.
