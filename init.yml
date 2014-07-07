@@ -50,3 +50,7 @@
       sudo: yes
     - apt: pkg=google-chrome-beta
       sudo: yes
+
+    - name: Install jrnl
+      action: pip name=jrnl
+      sudo: yes
