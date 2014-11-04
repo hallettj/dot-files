@@ -37,7 +37,13 @@ servers = (
     port = "6697";
     use_ssl = "yes";
   },
-  { address = "localhost"; chatnet = "BitlBee"; port = "6667"; }
+  {
+    address = "pdxmc.com";
+    chatnet = "pdxmc";
+    port = "6697";
+    use_ssl = "yes";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
