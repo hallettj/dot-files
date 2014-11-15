@@ -42,7 +42,6 @@ servers = (
     chatnet = "pdxmc";
     port = "6697";
     use_ssl = "yes";
-    autoconnect = "yes";
   }
 );
 
