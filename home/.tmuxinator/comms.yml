@@ -20,7 +20,7 @@ pre: pass grep 'does not match anything'
 
 windows:
   - mail/galois:   mutt -F ~/.mutt/logins/galois
-  - mail/sitrus:   mutt -F ~/.mutt/logins/sitrus
+  - mail/sitrus:   alot
   - jabber/galois: jabber jesse@galois.com
   - jabber/sitrus: jabber jesse@sitr.us
   - irc:           irssi
