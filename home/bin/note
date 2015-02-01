@@ -1,0 +1,55 @@
+#!/usr/bin/env runhaskell
+
+{-# LANGUAGE OverloadedStrings #-}
+
+import           Control.Foldl (list)
+import qualified Data.Text as Text
+import           Data.Time.ISO8601
+import           Turtle
+import           Prelude hiding (FilePath)
+
+main :: IO ()
+main = do
+  input <- fold stdin list
+  if emptyInput input
+  then err "aborted" >> exit 1
+  else writeEntry (head input) (select input)
+
+emptyInput :: [Text] -> Bool
+emptyInput input = null input ||
+  (null (tail input) && Text.null (Text.strip (head input)))
+
+writeEntry :: Text -> Shell Text -> IO ()
+writeEntry firstLine input = do
+  now  <- date
+  dir  <- notesDir now
+  path <- notePath now dir firstLine 0
+  mktree dir
+  output path input
+  real <- realpath path
+  echo (either id id (toText real))
+
+notesDir :: UTCTime -> IO FilePath
+notesDir t = do
+  myHome <- home
+  return $ myHome </> "Documents" </> "notes" </> fromText year
+  where
+    year = fromString (take 4 (show t))
+
+notePath :: UTCTime -> FilePath -> Text -> Int -> IO FilePath
+notePath t parentDir firstLine n = do
+  exists <- testfile path
+  if exists then notePath t parentDir firstLine (n + 1) else return path
+  where
+    path   = parentDir </> fromText name
+    name   = Text.take 64 (stamp <> prefix <> sanitize firstLine) <> ".markdown"
+    stamp  = Text.pack (take 19 (formatISO8601 t) ++ "Z")
+    prefix = if n <= 0 then "_" else "_" <> Text.pack (show n) <> "_"
+
+sanitize :: Text -> Text
+sanitize txt = Text.intercalate "-" (Text.split (not . pred) txt)
+  where
+    pred c = (c `elem` ['a'..'z']) ||
+             (c `elem` ['A'..'Z']) ||
+             (c `elem` ['0'..'9']) ||
+             (c `elem` "'.-_,")
