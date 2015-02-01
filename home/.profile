@@ -16,16 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Include executables installed by cabal-install in PATH
-if [ -d "$HOME/.cabal/bin" ] ; then
-    PATH="$HOME/.cabal/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
 export ANSIBLE_ASK_SUDO_PASS=True
 
 # That's right

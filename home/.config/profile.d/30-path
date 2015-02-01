@@ -1,0 +1,16 @@
+# Include executables installed by cabal-install in PATH
+if [ -d "$HOME/.cabal/bin" ] ; then
+    PATH="$HOME/.cabal/bin:$PATH"
+fi
+
+# Include executables installed by cabin in PATH - takes precedence over
+# cabal-install
+if [ -d "$HOME/.cabin/bin" ] ; then
+    PATH="$HOME/.cabin/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists - has highest
+# precedence
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
