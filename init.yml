@@ -11,6 +11,7 @@
         - ack-grep
         - apg
         - aptitude
+        - ansible
 
         - build-essential
         - curl
@@ -18,6 +19,11 @@
         - graphviz
         - htop
         - iotop
+        - myrepos
+
+        # Haskell stuff
+        - cabal-install
+        - ghc
 
         # IRC stuff
         - irssi
@@ -51,6 +57,10 @@
     - apt: pkg=google-chrome-beta
       sudo: yes
 
-    - name: Install jrnl
-      action: pip name=jrnl
-      sudo: yes
+    - name: cabal update
+      shell: cabal update
+
+    # Install Turtle and iso8601-time (used by `note`)
+    - name: dependencies for note
+      shell: cabal install turtle iso8601-time
+             creates=~/.cabal/packages/hackage.haskell.org/turtle

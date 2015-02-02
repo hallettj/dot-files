@@ -1,0 +1,25 @@
+
+[.homesick/repos/homeshick]
+checkout = git clone 'git://github.com/andsens/homeshick.git' 'homeshick'
+fixups = homeshick link homeshick
+skip = [ "$1" = "run" ]
+
+[.homesick/repos/dot-files]
+checkout = git clone 'git@github.com:hallettj/dot-files.git' 'dot-files'
+fixups = homeshick link dot-files && ansible-playbook -K init.yml
+
+[.homesick/repos/dot-mcabber]
+checkout = git clone 'git@github.com:hallettj/dot-mcabber.git' 'dot-mcabber'
+fixups = homeshick link dot-mcabber && ansible-playbook -K init.yml
+
+[.homesick/repos/dot-vim]
+checkout = git clone 'git@github.com:hallettj/dot-vim.git' 'dot-vim'
+fixups = homeshick link dot-vim && ansible-playbook -K init.yml
+
+[.homesick/repos/dot-xmonad]
+checkout = git clone 'git@github.com:hallettj/dot-xmonad.git' 'dot-xmonad'
+fixups = homeshick link dot-xmonad && ansible-playbook -K init.yml
+
+[.homesick/repos/dot-zsh]
+checkout = git clone 'git@github.com:hallettj/dot-zsh.git' 'dot-zsh'
+fixups = homeshick link dot-zsh && ansible-playbook -K init.yml
