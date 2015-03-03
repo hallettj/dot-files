@@ -115,6 +115,7 @@ chatnets = {
     autosendcmd = "/msg &bitlbee identify Byactyac1";
   };
   zinc = { type = "IRC"; };
+  pdxmc = { type = "IRC"; };
 };
 
 channels = (
