@@ -13,7 +13,8 @@
 
 import           Control.Foldl (list)
 import qualified Data.Text as Text
-import           Data.Time.ISO8601
+import           Data.Time.Format (formatTime)
+import           System.Locale (defaultTimeLocale)
 import           Turtle
 import           Prelude hiding (FilePath)
 
@@ -43,7 +44,7 @@ notesDir t = do
   myHome <- home
   return $ myHome </> "Documents" </> "notes" </> fromText year
   where
-    year = fromString (take 4 (show t))
+    year = fromString (formatTime defaultTimeLocale "%Y" t)
 
 notePath :: UTCTime -> FilePath -> Text -> Int -> IO FilePath
 notePath t parentDir firstLine n = do
@@ -51,9 +52,11 @@ notePath t parentDir firstLine n = do
   if exists then notePath t parentDir firstLine (n + 1) else return path
   where
     path   = parentDir </> fromText name
-    name   = Text.take 64 (stamp <> prefix <> sanitize firstLine) <> ".markdown"
-    stamp  = Text.pack (take 19 (formatISO8601 t) ++ "Z")
+    name   = Text.take 64 (timestamp t <> prefix <> sanitize firstLine) <> ".markdown"
     prefix = if n <= 0 then "_" else "_" <> Text.pack (show n) <> "_"
+
+timestamp :: UTCTime -> Text
+timestamp = Text.pack . formatTime defaultTimeLocale "%Y-%m-%d"
 
 sanitize :: Text -> Text
 sanitize txt = Text.intercalate "-" (Text.split (not . pred) txt)
