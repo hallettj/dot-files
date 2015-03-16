@@ -24,4 +24,3 @@ windows:
   - jabber/galois: jabber jesse@galois.com
   - jabber/sitrus: jabber jesse@sitr.us
   - irc:           irssi
-  - jabber/gmail:  jabber hallettj@gmail.com
