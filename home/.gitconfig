@@ -5,7 +5,7 @@
     ui = auto
 [user]
     name = Jesse Hallett
-    email = jesse@sitr.us
+    email = (none)  # Causes git to prompt me to set email per-repository.
     signingkey = A5CC2BE3
 [alias]
     st  = status
@@ -19,7 +19,7 @@
 [core]
     pager = less -FR
     excludesfiles = .*.swo .*.swp
-	autocrlf = input
+    autocrlf = input
 [format]
     #pretty = tformat:"%Cblue%h...%Creset %Cgreen%an:%Creset %s (%ar)"
 [push]
