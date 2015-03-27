@@ -125,6 +125,7 @@ channels = (
   { name = "#pdxtech"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#pdxfunc"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#pdxjs"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#pdxrust"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#xmonad"; chatnet = "freenode"; autojoin = "Yes"; }
 );
 
