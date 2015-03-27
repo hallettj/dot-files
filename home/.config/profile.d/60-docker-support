@@ -1,2 +1,1 @@
-alias docker='sudo docker'
-alias docker-gc='sudo ''docker ps -aq --filter "status=exited" | xargs -r docker rm && docker images -q --filter "dangling=true" | xargs -r docker rmi'''
+alias docker-gc='docker ps -aq --filter "status=exited" | xargs -r docker rm && docker images -q --filter "dangling=true" | xargs -r docker rmi'
