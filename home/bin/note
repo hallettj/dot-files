@@ -22,7 +22,7 @@ main :: IO ()
 main = do
   input <- fold stdin list
   if emptyInput input
-  then err "aborted" >> exit 1
+  then err "aborted" >> exit (ExitFailure 1)
   else writeEntry (head input) (select input)
 
 emptyInput :: [Text] -> Bool
