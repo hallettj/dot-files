@@ -3,8 +3,13 @@ if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
+# Include executables installed by stack in PATH
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Include executables installed by cabin in PATH - takes precedence over
-# cabal-install
+# cabal-install and stack
 if [ -d "$HOME/.cabin/bin" ] ; then
     PATH="$HOME/.cabin/bin:$PATH"
 fi
