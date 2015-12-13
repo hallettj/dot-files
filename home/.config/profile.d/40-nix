@@ -1,5 +1,9 @@
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
-  export INFOPATH="$HOME/.nix-profile/share/info:$INFOPATH"
+fi
+
+if [ -n "$NIX_LINK" ]; then
+  export MANPATH="$NIX_LINK/share/man:$MANPATH"
+  export INFOPATH="$NIX_LINK/share/info:$INFOPATH"
+  export CMAKE_PREFIX_PATH="$NIX_LINK"
 fi
