@@ -19,6 +19,6 @@ fi
 export ANSIBLE_ASK_SUDO_PASS=True
 
 # That's right
-export EDITOR=vim
+export EDITOR=nvim
 # And again
 export VISUAL=$EDITOR
