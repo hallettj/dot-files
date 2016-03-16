@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Initiate a tmux session on a remote host, or connect to an existing session.
+# Uses autossh to automatically re-connect and re-attach on network changes.
+#
+# This script works best with aggressive ServerAlive settings in your SSH
+# config. Here is what I use:
+#
+#     Host *
+#         ControlMaster auto
+#         ControlPersist 1h
+#         ControlPath /tmp/ssh_mux_%h_%p_%r
+#         ServerAliveInterval 15
+#         ServerAliveCountMax 1
+#
+# Usage examples:
+#
+#     $ smux hood v3spa
+#
+#     $ smux $HOST $SESSION_NAME
+#            
+
+set -e
+
+if [ "$#" -lt 1 ]; then
+  echo "usage: $(basename $0) <host> [<session name>]"
+  exit 1
+fi
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval $(ssh-agent -s)
+  ssh-add
+fi
+
+HOST="$1"
+SESSION="$2"
+
+case "$SESSION" in
+  "") autossh -M 0 $HOST -t "if tmux -qu has; then tmux -qu attach; else EDITOR=vim tmux -qu new; fi";;
+  *) autossh -M 0 $HOST -t "tmux -qu new-session -A -s $SESSION";;
+esac
