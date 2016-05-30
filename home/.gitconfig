@@ -5,8 +5,8 @@
     ui = auto
 [user]
     name = Jesse Hallett
-    email = (none)  # Causes git to prompt me to set email per-repository.
     signingkey = A5CC2BE3
+    useConfigOnly = true
 [alias]
     st  = status
     up  = !git stash && git fetch && git rebase origin/master && git stash pop
