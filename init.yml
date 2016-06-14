@@ -50,16 +50,16 @@
         - xclip
 
     # Install Google Chrome
-    - apt_key: id=7FAC5991
-               url=https://dl-ssl.google.com/linux/linux_signing_key.pub
-      sudo: yes
-      when: no_sudo is not defined
-    - apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main'
-      sudo: yes
-      when: no_sudo is not defined
-    - apt: pkg=google-chrome-beta
-      sudo: yes
-      when: no_sudo is not defined
+    # - apt_key: id=7FAC5991
+    #            url=https://dl-ssl.google.com/linux/linux_signing_key.pub
+    #   sudo: yes
+    #   when: no_sudo is not defined
+    # - apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main'
+    #   sudo: yes
+    #   when: no_sudo is not defined
+    # - apt: pkg=google-chrome-beta
+    #   sudo: yes
+    #   when: no_sudo is not defined
 
     - name: cabal update
       shell: cabal update
