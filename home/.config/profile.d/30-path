@@ -1,24 +1,18 @@
 # Include executables installed by cabal-install in PATH
-if [ -d "$HOME/.cabal/bin" ] ; then
-    PATH="$HOME/.cabal/bin:$PATH"
-fi
+PATH=$(prepend-to-path "$HOME/.cabal/bin")
 
 # Include executables installed by stack in PATH
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+PATH=$(prepend-to-path "$HOME/.local/bin")
 
 # Include executables installed by cabin in PATH - takes precedence over
 # cabal-install and stack
-if [ -d "$HOME/.cabin/bin" ] ; then
-    PATH="$HOME/.cabin/bin:$PATH"
-fi
+PATH=$(prepend-to-path "$HOME/.cabin/bin")
 
 # set PATH so it includes user's private bin if it exists - has highest
 # precedence
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+PATH=$(prepend-to-path "$HOME/bin")
 
 # Puts executables installed with current Javascript project in PATH
-PATH="node_modules/.bin:$PATH"
+PATH=$(prepend-to-path "node_modules/.bin")
+
+export PATH

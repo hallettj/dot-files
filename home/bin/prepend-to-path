@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Utility to construct a PATH value that includes a new value only if it does
+# not already exist in the PATH, and is an existing directory. Tests the
+# existing $PATH variable, and prints an updated value.
+
+DIR="$1"
+
+# if [[ "$PATH" =~ (^|:)"$1"(:|$) || ! -d "$1" ]]; then
+if [[ "$PATH" =~ (^|:)"$1"(:|$) ]]; then
+	echo "$PATH"
+else
+	echo "$1:$PATH"
+fi

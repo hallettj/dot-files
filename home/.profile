@@ -22,3 +22,13 @@ export ANSIBLE_ASK_SUDO_PASS=True
 export EDITOR=nvim
 # And again
 export VISUAL=$EDITOR
+
+# Source configurations from ~/.config/profile.d/*
+CONFIGS="$HOME/.config/profile.d"
+if [ -d "$CONFIGS" ]; then
+    for CONFIGFILE in "$CONFIGS"/*; do
+        if [ -r "$CONFIGFILE" ]; then
+            source "$CONFIGFILE"
+        fi
+    done
+fi
