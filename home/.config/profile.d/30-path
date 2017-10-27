@@ -11,9 +11,15 @@ PATH=$(prepend-to-path "$HOME/.local/bin")
 # cabal-install and stack
 PATH=$(prepend-to-path "$HOME/.cabin/bin")
 
+# Include executables installed by yarn in PATH
+PATH=$(prepend-to-path "$HOME/.config/yarn/global/node_modules/.bin")
+
 # set PATH so it includes user's private bin if it exists - has highest
 # precedence
 PATH=$(prepend-to-path "$HOME/bin")
+
+# When working with Lerna projects, include top-level executables in PATH
+PATH=$(prepend-to-path "../../node_modules/.bin")
 
 # Puts executables installed with current Javascript project in PATH
 PATH=$(prepend-to-path "node_modules/.bin")
