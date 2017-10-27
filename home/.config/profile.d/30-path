@@ -1,3 +1,6 @@
+# Include executables installed by golang in PATH
+PATH=$(prepend-to-path "$HOME/go/bin")
+
 # Include executables installed by cabal-install in PATH
 PATH=$(prepend-to-path "$HOME/.cabal/bin")
 
