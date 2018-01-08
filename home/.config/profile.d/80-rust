@@ -1,0 +1,3 @@
+if [ -d "$HOME/.cargo/bin" ]; then
+  PATH=$(prepend-to-path "$HOME/.cargo/bin")
+fi
