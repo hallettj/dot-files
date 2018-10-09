@@ -7,6 +7,7 @@
 	name = Jesse Hallett
 	signingkey = A5CC2BE3
 	useConfigOnly = true
+	email = jesse@sitr.us
 [alias]
 	st  = status
 	up  = !git stash && git fetch && git rebase origin/master && git stash pop
