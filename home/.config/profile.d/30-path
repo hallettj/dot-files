@@ -1,5 +1,10 @@
+PATH="$HOME/bin:$PATH"
+
 # Include executables installed by golang in PATH
 PATH=$(prepend-to-path "$HOME/go/bin")
+
+# Include executables installed by cargo in PATH
+PATH=$(prepend-to-path "$HOME/.cargo/bin")
 
 # Include executables installed by cabal-install in PATH
 PATH=$(prepend-to-path "$HOME/.cabal/bin")
@@ -13,10 +18,6 @@ PATH=$(prepend-to-path "$HOME/.cabin/bin")
 
 # Include executables installed by yarn in PATH
 PATH=$(prepend-to-path "$HOME/.config/yarn/global/node_modules/.bin")
-
-# set PATH so it includes user's private bin if it exists - has highest
-# precedence
-PATH=$(prepend-to-path "$HOME/bin")
 
 # When working with Lerna projects, include top-level executables in PATH
 PATH=$(prepend-to-path "../../node_modules/.bin")
