@@ -46,6 +46,7 @@
         - python-pycurl
 
         - tmux
+        - tmux-plugin-manager
         - wget
         - xclip
 
