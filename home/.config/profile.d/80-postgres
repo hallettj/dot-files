@@ -1,0 +1,3 @@
+if [ -d "/usr/lib/postgresql/11/bin" ]; then
+  PATH=$(prepend-to-path "/usr/lib/postgresql/11/bin")
+fi
