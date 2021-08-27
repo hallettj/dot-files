@@ -1,8 +1,5 @@
 PATH="$HOME/bin:$PATH"
 
-# Include executables installed by golang in PATH
-PATH=$(prepend-to-path "$HOME/go/bin")
-
 # Include executables installed by cargo in PATH
 PATH=$(prepend-to-path "$HOME/.cargo/bin")
 
@@ -24,5 +21,8 @@ PATH=$(prepend-to-path "../../node_modules/.bin")
 
 # Puts executables installed with current Javascript project in PATH
 PATH=$(prepend-to-path "node_modules/.bin")
+
+# Use skim executables installed by Vim plugin
+PATH=$(prepend-to-path "$HOME/.local/share/nvim/site/pack/packer/start/skim/bin")
 
 export PATH
