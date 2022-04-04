@@ -21,6 +21,7 @@
 	pager = less -FR
 	excludesfiles = .*.swo .*.swp
 	autocrlf = input
+	editor = nvim
 [format]
 	#pretty = tformat:"%Cblue%h...%Creset %Cgreen%an:%Creset %s (%ar)"
 [push]
