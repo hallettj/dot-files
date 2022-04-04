@@ -1,4 +1,7 @@
+# We can't use `prepend-to-path` here because it is in `$HOME/bin`
 PATH="$HOME/bin:$PATH"
+
+PATH=$(prepend-to-path "/usr/games")
 
 # Include executables installed by cargo in PATH
 PATH=$(prepend-to-path "$HOME/.cargo/bin")
