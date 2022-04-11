@@ -1,0 +1,3 @@
+# ghcup manages installations of ghc, cabal, stack, haskell-language-server, etc
+
+[ -f "/home/jesse/.ghcup/env" ] && source "/home/jesse/.ghcup/env" # ghcup-env
