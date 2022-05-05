@@ -7,8 +7,8 @@
 DIR="$1"
 
 # if [[ "$PATH" =~ (^|:)"$1"(:|$) || ! -d "$1" ]]; then
-if [[ "$PATH" =~ (^|:)"$1"(:|$) ]]; then
+if [[ $PATH =~ (^|:)"$DIR"(:|$) ]]; then
 	echo "$PATH"
 else
-	echo "$1:$PATH"
+	echo "$DIR:$PATH"
 fi
