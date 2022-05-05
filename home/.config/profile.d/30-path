@@ -3,6 +3,8 @@ PATH="$HOME/bin:$PATH"
 
 PATH=$(prepend-to-path "/usr/games")
 
+PATH=$(prepend-to-path "$HOME/.luarocks/bin")
+
 # Include executables installed by cargo in PATH
 PATH=$(prepend-to-path "$HOME/.cargo/bin")
 
