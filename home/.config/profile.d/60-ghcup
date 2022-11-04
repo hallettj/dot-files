@@ -1,3 +1,5 @@
 # ghcup manages installations of ghc, cabal, stack, haskell-language-server, etc
-
-[ -f "/home/jesse/.ghcup/env" ] && source "/home/jesse/.ghcup/env" # ghcup-env
+# Check whether it's already added its path entry to avoid setting it up twice.
+if [[ -f "/home/jesse/.ghcup/env" && ":$PATH:" != *":$HOME/.ghcup/bin:"* ]]; then
+  source "/home/jesse/.ghcup/env"
+fi
