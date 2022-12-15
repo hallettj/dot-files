@@ -1,3 +1,6 @@
 # Use nix-direnv for `use nix` and `use flake` instead of direnv's default
 # implementations.
 source $HOME/.nix-profile/share/nix-direnv/direnvrc
+
+# A `nix develop` environment needs help finding the Debian terminfo database.
+export TERMINFO=/usr/share/terminfo
