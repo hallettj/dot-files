@@ -1,5 +1,7 @@
 # dot-files
 
+**This is outdated** - my configuration has moved to https://github.com/hallettj/home.nix
+
 This is the base configuration for my workstations.  It is managed with
 [homeshick][], which creates symlinks from the appropriate locations in
 my home directory.  Installing dependencies, compiling, and other setup
